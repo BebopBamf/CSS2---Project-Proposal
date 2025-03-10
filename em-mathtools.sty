@@ -1,0 +1,152 @@
+% This package is dedicated to the public domain using CC0.
+% For more information, see <https://creativecommons.org/publicdomain/zero/1.0/>.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesExplPackage{em-mathtools}{2024-12-07}{v0.1.0}
+{Euan Mendoza's Personal LaTeX Macros for Maths.}
+
+% LaTeX3 packages
+\RequirePackage{expl3}
+\RequirePackage{xparse}
+\RequirePackage{xspace}
+
+\errorcontextlines 20
+
+% Load some utility packages.
+% \RequirePackage{xkeyval}  % Better keyval parsing.
+% \RequirePackage{kvoptions}  % More flexible package options.
+
+\RequirePackage{mathtools}
+\RequirePackage{amssymb}
+
+
+\RequirePackage{mathrsfs}
+
+\NewDocumentCommand \Pset {}{\mathscr{P}}
+
+% Common number sets and fields
+\NewDocumentCommand \F {}{\mathbb{F}}
+\NewDocumentCommand \K {}{\mathbb{K}}
+\NewDocumentCommand \C {}{\mathbb{C}}
+\NewDocumentCommand \R {}{\mathbb{R}}
+\NewDocumentCommand \Q {}{\mathbb{Q}}
+\NewDocumentCommand \Z {}{\mathbb{Z}}
+\NewDocumentCommand \N {}{\mathbb{N}}
+
+\NewDocumentCommand \bra {m}{\langle{#1}|}
+\NewDocumentCommand \ket {m}{|{#1}\rangle}
+\NewDocumentCommand \braket {m m}{\langle{#1}|{#2}\rangle}
+\NewDocumentCommand \ip {m m}{\langle{#1}, {#2}\rangle}
+
+\NewDocumentCommand \poly {}{\ensuremath{\text{poly}}}
+\NewDocumentCommand \polylog {}{\ensuremath{\text{polylog}}}
+%\NewDocumentCommand \exp {}{\ensuremath{\text{exp}}}
+
+% Group sets
+\NewDocumentCommand \Iso {}{\mathrm{Iso}}
+\NewDocumentCommand \Aut {}{\mathrm{Aut}}
+
+% Matrix Groups
+\NewDocumentCommand \GL {}{\mathrm{GL}}
+\NewDocumentCommand \U {}{\mathrm{U}}
+\NewDocumentCommand \SO {}{\mathrm{SO}}
+
+% Linear spaces
+\NewDocumentCommand \T {}{\mathrm{T}}
+\NewDocumentCommand \M {}{\mathrm{M}}
+
+% Vectors and tuples
+\RenewDocumentCommand \vec {m}{\mathbf{#1}}
+\NewDocumentCommand \vzero {}{\vec{0}}
+\NewDocumentCommand \vA {}{\vec{A}}
+\NewDocumentCommand \vB {}{\vec{B}}
+\NewDocumentCommand \vC {}{\vec{C}}
+\NewDocumentCommand \vD {}{\vec{D}}
+
+% Matrix spaces
+\NewDocumentCommand \spa {m}{\mathcal{#1}}
+\NewDocumentCommand \cA {}{\spa{A}}
+\NewDocumentCommand \cB {}{\spa{B}}
+\NewDocumentCommand \cC {}{\spa{C}}
+\NewDocumentCommand \cD {}{\spa{D}}
+\NewDocumentCommand \cH {}{\spa{H}}
+
+% Tensors
+\NewDocumentCommand \tens {m}{\mathtt{#1}}
+\NewDocumentCommand \tA {}{\tens{A}}
+\NewDocumentCommand \tB {}{\tens{B}}
+\NewDocumentCommand \tC {}{\tens{C}}
+\NewDocumentCommand \tD {}{\tens{D}}
+
+% Probability
+\NewDocumentCommand \E {}{\mathrm{E}}
+\NewDocumentCommand \Var {}{\mathrm{Var}}
+
+\RequirePackage{amsthm}
+
+\RenewDocumentCommand \qedsymbol {}{$\blacksquare$}
+
+% Theorem styles
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{claim}{Claim}[section]
+\newtheorem{hypothesis}{Hypothesis}[section]
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{construction}{Construction}
+\newtheorem{conjecture}{Conjecture}
+
+% Definition styles
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{action}{Group~Action}
+\newtheorem{question}{Research~Question}
+\newtheorem{assumption}{Assumption}
+\newtheorem{observation}{Observation}
+\newtheorem{fact}{Fact}
+\newtheorem{problem}{Problem}
+\newtheorem{openproblem}{Open~Problem}
+\newtheorem{oprb}{Open~Problem}
+\newtheorem{remark}[theorem]{Remark}
+
+
+\NewDocumentCommand \probsty {m}{\textsf{#1}\xspace}
+
+\NewDocumentCommand \GIp {}{\probsty{GI}}
+\NewDocumentCommand \TIp {}{\probsty{TI}}
+\NewDocumentCommand \MSE {}{\probsty{MSE}}
+\NewDocumentCommand \MSC {}{\probsty{MSC}}
+\NewDocumentCommand \MTE {}{\probsty{MTE}}
+\NewDocumentCommand \MTC {}{\probsty{MTC}}
+\NewDocumentCommand \AMSE {}{\probsty{Alt-MSC}}
+\NewDocumentCommand \AMSC {}{\probsty{Alt-MSC}}
+\NewDocumentCommand \AMTC {}{\probsty{Alt-MTC}}
+\NewDocumentCommand \cAMTC {}{\probsty{Cond-Alt-MTC}}
+\NewDocumentCommand \IAMSC {}{\probsty{Inhom-Alt-MSC}}
+\NewDocumentCommand \BDAMSC {}{\probsty{BDiag-Alt-MSC}}
+\NewDocumentCommand \SAI {o}{
+	\IfValueTF{#1}{
+		\probsty{$#1$-SAI}
+	}{
+		\probsty{SAI}
+	}
+}
+% \NewDocumentCommand \iSAI {m}{\probsty{$#1$-SAI}}
+%\NewDocumentCommand \dSAI {}{\iSAI{d}}
+
+% Complexity Classes
+\RequirePackage{xspace}
+
+\NewDocumentCommand \class {m}{\textrm{#1}\xspace}
+
+\NewDocumentCommand \NP {}{\class{NP}}
+\NewDocumentCommand \NPc {}{\class{NP-complete}}
+\NewDocumentCommand \coNP {}{\class{coNP}}
+\NewDocumentCommand \AM {}{\class{AM}}
+\NewDocumentCommand \coAM {}{\class{coAM}}
+\NewDocumentCommand \SZK {}{\class{SZK}}
+\NewDocumentCommand \GI {}{\class{GI}}
+\NewDocumentCommand \TI {}{\class{TI}}
+\NewDocumentCommand \TIc {}{\class{TI-complete}}
+
+\endinput

@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+
+% PDF Layout
+\usepackage[a4paper,left=2cm,right=2cm,bottom=3cm,top=2.5cm]{geometry}
+
+% Standard Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+\hypersetup{
+	pdftitle={Note Template},
+	pdfauthor={},
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=blue,
+	pdfstartview=FitH,
+	pdfpagemode=UseOutlines,
+	pdfpagelayout=OneColumn,
+}
+
+% Personal Macros
+\usepackage{em-mathtools}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Bibliography Package
+% \usepackage[style=alphabetic,maxbibnames=6]{biblatex}
+% \addbibresource{isomorphism-testing.bib}
+
+\usepackage[capitalise]{cleveref}
+
+\title{
+  Project Title Here
+}
+\author{
+Author Name \large{email@email.com}
+}
+
+\begin{document}
+
+\maketitle
+
+\textcolor{red}{Probably want to keep it about 2 and a half pages (excluding references) unless there is a minimum word requirement. Page 1 should focus on the problem, page 2 should focus on methods and timeline.}
+
+\section{Introduction}
+[maximum 200 words] \\
+
+\noindent \textcolor{red}{Project description including: Aims, significance, and expected outcome of the project.}
+
+\subsection{Aims and Objectives}\label{subsec:aims}
+Oscar
+\subsection{Applications}\label{subsec:applications}
+
+\subsection{Research Questions}\label{subsec:questions}
+
+\subsection{Expected Results}\label{subsec:expected-results}
+Oscar
+\section{Background}\label{sec:background}
+[maximum 200 words] \\
+
+\begin{itemize}
+    \item Summary of relevant literature and theoretical framework
+    \item Identification of gaps or areas for further research
+    \item Explanation of how the proposed research fills those gaps or contributes to the existing knowledge
+\end{itemize}
+
+\subsection{The Word Problem for Groups}\label{subsec:word-problem}
+
+\begin{lemma}\label{lem:finite-groups-dfa-wp}
+test
+\end{lemma}
+Sinclair
+\subsection{Formal Proof Verification in Lean}
+Aiden
+
+
+\section{Feasibility Study}
+Section 3: Feasibility study in terms of computing \& time resources, team’s capability, and skill sets. [maximum 200 words]
+\newline
+
+Aiden/Anyone
+\begin{itemize}
+    \item Data collection methods (e.g., surveys, interviews, experiments, publicly available datasets)
+    \item Data analysis procedures
+    \item Solution design \& implementation
+    \item Experimental verification
+    \item Ethical considerations (e.g., informed consent, confidentiality)
+\end{itemize}
+
+
+\section{Project Management Plan}
+%%%%% Anyone/Vikram %%%%%
+
+
+\begin{itemize}
+    \item Timeline \& Milestones.
+    \item Roles \& Responsibilities.
+    \item Budget \& Resources.
+    \item Risk Management.
+    \item An efficient communication plan.
+\end{itemize}
+
+\section{References}
+
+\textcolor{red}{List of all sources cited in the proposal, following a specific citation style (e.g., APA, MLA).}
+
+In~\cref{subsec:aims}. In~\cref{lem:finite-groups-dfa-wp}. 
+
+% Citation goes here\autocite{Author2001}
+% Citation goes here\cite{Author2001}
+% Author had the result P=NP\cite{PaperHere}
+
+\end{document}
