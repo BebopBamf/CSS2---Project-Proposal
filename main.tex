@@ -25,8 +25,8 @@
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
 % Bibliography Package
-% \usepackage[style=alphabetic,maxbibnames=6]{biblatex}
-% \addbibresource{isomorphism-testing.bib}
+\usepackage[style=alphabetic,maxbibnames=6]{biblatex}
+\addbibresource{formalising-wp-groups.bib}
 
 \usepackage[capitalise]{cleveref}
 
@@ -34,7 +34,7 @@
   Project Title Here
 }
 \author{
-Author Name \large{email@email.com}
+  Author Name \large{email@email.com}
 }
 
 \begin{document}
@@ -43,19 +43,18 @@ Author Name \large{email@email.com}
 
 \textcolor{red}{Probably want to keep it about 2 and a half pages (excluding references) unless there is a minimum word requirement. Page 1 should focus on the problem, page 2 should focus on methods and timeline.}
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 [maximum 200 words] \\
 
 \noindent \textcolor{red}{Project description including: Aims, significance, and expected outcome of the project.}
 
-\subsection{Aims and Objectives}\label{subsec:aims}
-Oscar
-\subsection{Applications}\label{subsec:applications}
+\begin{enumerate}
+  \item Brief problem description and project introduction.
+  \item Aims and objectives of the research project (keep vague).
+  \item Research significance and applications, you can talk about PQC, language verification, etc.
+  \item Expected results... we expect to reimplement important theorems surrounding the word problem for groups...
+\end{enumerate}
 
-\subsection{Research Questions}\label{subsec:questions}
-
-\subsection{Expected Results}\label{subsec:expected-results}
-Oscar
 \section{Background}\label{sec:background}
 [maximum 200 words] \\
 
@@ -65,21 +64,27 @@ Oscar
     \item Explanation of how the proposed research fills those gaps or contributes to the existing knowledge
 \end{itemize}
 
-\subsection{The Word Problem for Groups}\label{subsec:word-problem}
+\paragraph{Preliminaries.} A group $G$ is said to be finitely generated if it's generating set is finite.
 
-\begin{lemma}\label{lem:finite-groups-dfa-wp}
-test
-\end{lemma}
-Sinclair
-\subsection{Formal Proof Verification in Lean}
-Aiden
+\paragraph{The Word Problem for Groups.} Given a group $G$ and a generating set $X$ for $G$, the word problem for $G$ and $X$ denoted $\WP(G,X)$, asks to decide whether,
 
+\textcolor{blue}{Sinclair}
+
+\begin{theorem}[{\cite[Theorem~3.4.1]{HoltEtAl2017}}]\label{thm:finite-groups-dfa-wp}
+  Given a finitely generated group $G$ with generating set $X$, $\WP(G,X)$ is regular if and only if $G$ is finite.
+\end{theorem}
+
+\paragraph{Formal Verification in Lean} Many recent projects have investigated formalising mathematical theories in lean.
+\textcolor{blue}{Aiden}
 
 \section{Feasibility Study}
-Section 3: Feasibility study in terms of computing \& time resources, team’s capability, and skill sets. [maximum 200 words]
+[maximum 200 words]
 \newline
 
-Aiden/Anyone
+\textcolor{Feasibility study in terms of computing \& time resources, team’s capability, and skill sets.}
+
+\textcolor{blue}{Aiden/Anyone}
+
 \begin{itemize}
     \item Data collection methods (e.g., surveys, interviews, experiments, publicly available datasets)
     \item Data analysis procedures
@@ -101,11 +106,11 @@ Aiden/Anyone
     \item An efficient communication plan.
 \end{itemize}
 
-\section{References}
+\printbibliography
 
 \textcolor{red}{List of all sources cited in the proposal, following a specific citation style (e.g., APA, MLA).}
 
-In~\cref{subsec:aims}. In~\cref{lem:finite-groups-dfa-wp}. 
+% In~\cref{subsec:aims}. In~\cref{lem:finite-groups-dfa-wp}.
 
 % Citation goes here\autocite{Author2001}
 % Citation goes here\cite{Author2001}
